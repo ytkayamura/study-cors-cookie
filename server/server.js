@@ -19,7 +19,8 @@ const exec = () => {
     console.log("opton");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     res.setHeader("Access-Control-Allow-Origin", origin);
-    res.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+    //res.setHeader("Access-Control-Allow-Methods", "POST");  // なくても動くらしい。。
+    res.setHeader("Access-Control-Allow-Credentials", true);
     res.status(200).send();
   };
   app.options("/api/cookie", options);

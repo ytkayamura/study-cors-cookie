@@ -11,10 +11,15 @@ const App = () => {
   const request = (method, cors) => async () => {
     const origin = corsOrigin[cors];
     const url = `${origin}/api/${method}`;
-    const res = await axios.post(url, {
-      cors,
-      withCredentials: true,
-    });
+    const res = await axios.post(
+      url,
+      {
+        cors,
+      },
+      {
+        withCredentials: true,
+      }
+    );
     console.log(url, res.data);
   };
 
